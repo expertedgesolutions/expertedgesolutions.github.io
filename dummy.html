@@ -16,7 +16,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
         
-        body { background-color: var(--deep-navy); color: white; overflow-x: hidden; }
+        body { background-color: var(--deep-navy); color: white; overflow-x: hidden; width: 100%; }
 
         /* --- Enhanced Background Design --- */
         .bg-gradient {
@@ -46,83 +46,104 @@
             to { transform: translate(20%, 20%); }
         }
 
-        /* --- Floating Nav --- */
-        nav {
+        /* --- Floating Logo (Top Left) --- */
+        .floating-logo {
             position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 1200px;
-            background: rgba(10, 20, 40, 0.8);
+            top: 25px;
+            left: 25px;
+            z-index: 1001;
+            background: rgba(10, 20, 40, 0.85);
             backdrop-filter: blur(15px);
-            padding: 15px 40px;
-            border-radius: 100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
+            padding: 10px;
+            border-radius: 15px;
             border: 1px solid rgba(197, 160, 89, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .logo-box img { height: 45px; filter: drop-shadow(0 0 5px var(--dubai-gold)); }
+        .floating-logo img { 
+            height: 50px; 
+            filter: drop-shadow(0 0 5px var(--dubai-gold)); 
+        }
 
-        .nav-links a {
-            color: white;
+        /* --- Return to Top Arrow (Bottom Right) --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--dubai-gold);
+            color: var(--deep-navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            z-index: 1001;
             transition: 0.3s;
-            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
         }
 
-        .nav-links a:hover { color: var(--dubai-gold); text-shadow: 0 0 10px var(--dubai-gold); }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: white;
+        }
 
         /* --- Hero Section --- */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding-top: 80px;
+            padding: 120px 20px 40px 20px;
         }
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-size: clamp(2.2rem, 10vw, 5.5rem);
             background: linear-gradient(to bottom, #ffffff, #c5a059);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.1;
+            margin-bottom: 15px;
         }
 
         .tagline {
             color: var(--dubai-gold);
-            font-size: 1.2rem;
-            letter-spacing: 8px;
-            margin: 20px 0 10px 0;
+            font-size: clamp(0.7rem, 3vw, 1.2rem);
+            letter-spacing: clamp(3px, 1.5vw, 8px);
+            margin: 10px 0;
             text-transform: uppercase;
             opacity: 0.8;
         }
 
         .address-line {
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+            font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+            letter-spacing: 1px;
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-weight: 300;
+            max-width: 80%;
         }
 
         /* --- Interactive Service Bento Grid --- */
-        .services-section { padding: 100px 10%; }
+        .services-section { padding: 80px 5%; }
 
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-auto-rows: 250px;
+            grid-auto-rows: auto;
             gap: 20px;
         }
 
@@ -132,55 +153,53 @@
             background: var(--glass-white);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 24px;
-            padding: 40px;
-            position: relative;
+            padding: 30px;
             height: 100%;
-            overflow: hidden;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
             backdrop-filter: blur(5px);
         }
 
         .bento-item:hover {
             background: rgba(197, 160, 89, 0.1);
             border-color: var(--dubai-gold);
-            transform: scale(1.02);
+            transform: translateY(-5px);
         }
 
-        .bento-item i { font-size: 2.5rem; color: var(--dubai-gold); margin-bottom: 20px; }
-        .bento-item h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        .bento-item i { font-size: 2rem; color: var(--dubai-gold); margin-bottom: 15px; }
+        .bento-item h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .bento-item p { font-size: 0.9rem; line-height: 1.5; opacity: 0.8; }
         
         .item-1 { grid-column: span 2; }
         .item-4 { grid-column: span 2; }
 
         /* --- Experts Section --- */
         .experts-section {
-            padding: 80px 10%;
+            padding: 60px 8%;
             text-align: center;
             background: rgba(255,255,255,0.02);
         }
 
         .experts-container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             line-height: 1.8;
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             color: rgba(255,255,255,0.9);
         }
 
-        .experts-container strong { color: var(--dubai-gold); }
+        .experts-container h2 { font-size: clamp(1.4rem, 4vw, 2.2rem); }
 
         /* --- Contact Form Section --- */
         .contact-section {
-            padding: 100px 10%;
+            padding: 60px 5%;
             background: linear-gradient(180deg, transparent, #0a1428);
         }
 
         .contact-container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             background: rgba(255,255,255,0.03);
-            padding: 50px;
+            padding: clamp(20px, 5vw, 50px);
             border-radius: 30px;
             border: 1px solid rgba(197, 160, 89, 0.2);
             text-align: center;
@@ -189,10 +208,10 @@
 
         .contact-actions {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .contact-btn {
@@ -200,87 +219,76 @@
             align-items: center;
             background: var(--dubai-gold);
             color: var(--deep-navy);
-            padding: 18px 35px;
+            padding: 12px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
             transition: 0.4s;
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
-        .contact-btn.whatsapp {
-            background: #25D366;
-            color: white;
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .contact-btn i { margin-right: 12px; font-size: 1.2rem; }
-
-        .contact-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            filter: brightness(1.1);
-        }
+        .contact-btn.whatsapp { background: #25D366; color: white; }
+        .contact-btn i { margin-right: 8px; font-size: 1rem; }
 
         /* --- New Inquiry Contact Box --- */
         .inquiry-box {
             max-width: 1000px;
-            margin: 50px auto;
+            margin: 40px auto;
             display: grid;
             grid-template-columns: 1fr 1.5fr;
             background: rgba(255,255,255,0.02);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 30px;
+            border-radius: 25px;
             overflow: hidden;
             text-align: left;
         }
 
         .inquiry-info {
             background: linear-gradient(135deg, rgba(197, 160, 89, 0.1), transparent);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            padding: 30px;
         }
 
-        .inquiry-form { padding: 40px; background: rgba(0,0,0,0.2); }
+        .inquiry-form { padding: 30px; background: rgba(0,0,0,0.2); }
 
         .inquiry-form input, .inquiry-form textarea {
             width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
+            padding: 12px;
+            margin-bottom: 15px;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 10px;
             color: white;
-            outline: none;
         }
-
-        .inquiry-form input:focus { border-color: var(--dubai-gold); }
 
         .submit-btn {
             background: var(--dubai-gold);
             color: var(--deep-navy);
             border: none;
-            padding: 15px 30px;
+            padding: 12px;
             border-radius: 10px;
             font-weight: 700;
-            cursor: pointer;
             width: 100%;
-            transition: 0.3s;
+            cursor: pointer;
         }
 
-        .submit-btn:hover { background: white; transform: scale(1.02); }
+        .info-item { display: flex; align-items: flex-start; margin-bottom: 20px; font-size: 0.9rem; }
+        .info-item i { color: var(--dubai-gold); margin-right: 12px; margin-top: 3px; }
 
-        .info-item { display: flex; align-items: center; margin-bottom: 20px; color: rgba(255,255,255,0.8); }
-        .info-item i { color: var(--dubai-gold); margin-right: 15px; font-size: 1.2rem; }
+        footer { text-align: center; padding: 40px 20px; opacity: 0.5; font-size: 0.75rem; }
 
-        footer { text-align: center; padding: 50px; opacity: 0.5; font-size: 0.8rem; }
-
-        @media (max-width: 768px) {
+        /* --- Mobile Responsive Tweak --- */
+        @media (max-width: 900px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .item-1, .item-4 { grid-column: span 1; }
             .inquiry-box { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .contact-actions { flex-direction: column; }
+            .contact-btn { width: 100%; justify-content: center; }
+            .hero { padding-top: 100px; }
+            .floating-logo { top: 15px; left: 15px; }
         }
 
     </style>
@@ -291,16 +299,13 @@
     <div class="bg-ornament" style="top: 10%; left: 10%;"></div>
     <div class="bg-ornament" style="bottom: 10%; right: 10%; animation-delay: -5s;"></div>
 
-    <nav>
-        <div class="logo-box">
-            <img src="logo.jpg" alt="Expert Edge Solutions">
-        </div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Expertise</a>
-            <a href="#cta">Contact</a>
-        </div>
-    </nav>
+    <div class="floating-logo">
+        <img src="logo.jpg" alt="Expert Edge Solutions">
+    </div>
+
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <section class="hero" id="home">
         <p class="tagline">Precision • Knowledge • Excellence</p>
@@ -314,7 +319,7 @@
         <div class="experts-container">
             <h2 style="color: var(--dubai-gold); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 3px;">A Global Network of Excellence</h2>
             <p>
-                At Expert Edge Solutions, we pride ourselves on a borderless commitment to intellectual growth. Our core strength lies in our elite network of subject matter experts spanning across the <strong>USA, UK, Australia, UAE, India</strong>, and beyond. 
+                At Expert Edge Solutions, we pride ourselves on a borderless commitment to intellectual growth. Our core strength lies in our elite network of subject matter experts spanning across the <strong>USA, UK, Australia, Canada, Sweden, Poland, UAE, India</strong>, and beyond. 
             </p>
             <br>
             <p>
@@ -324,7 +329,7 @@
     </section>
 
     <section class="services-section" id="services">
-        <h2 style="text-align:center; margin-bottom:50px; font-weight:300; letter-spacing:5px; text-transform:uppercase;">Our Services</h2>
+        <h2 style="text-align:center; margin-bottom:40px; font-weight:300; letter-spacing:5px; text-transform:uppercase; font-size: clamp(1.2rem, 5vw, 1.8rem);">Our Services</h2>
         <div class="bento-grid">
             <a href="https://expertedgesolutions.github.io/services/writing" class="bento-link item-1">
                 <div class="bento-item">
@@ -362,8 +367,8 @@
 
     <section class="contact-section" id="cta">
         <div class="contact-container">
-            <h2 style="font-family:'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px;">Ready to Elevate?</h2>
-            <p style="opacity:0.7; margin-bottom: 30px;">Connect with our Dubai-based experts for bespoke publication and design solutions.</p>
+            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 15px;">Ready to Elevate?</h2>
+            <p style="opacity:0.7; margin-bottom: 20px; font-size: 0.9rem;">Connect with our experts for bespoke publication and design solutions.</p>
             
             <div class="inquiry-box">
                 <div class="inquiry-info">
@@ -371,7 +376,7 @@
                         <h3 style="color: var(--dubai-gold); margin-bottom: 20px;">Contact Details</h3>
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Academic City - Dubai, UAE</span>
+                            <span>Al Rowaiyah First - Academic City - Dubai, UAE</span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
@@ -382,9 +387,9 @@
                             <span>+971 XXXXXXXXXXXX</span>
                         </div>
                     </div>
-                    <div class="contact-actions" style="justify-content: flex-start; margin-top: 20px;">
-                        <a href="mailto:exedge.solutions@gmail.com" class="contact-btn" style="padding: 12px 20px;">Email</a>
-                        <a href="https://wa.me/971XXXXXXXXXXXX" class="contact-btn whatsapp" style="padding: 12px 20px;">WhatsApp</a>
+                    <div class="contact-actions" style="justify-content: flex-start;">
+                        <a href="mailto:exedge.solutions@gmail.com" class="contact-btn">Email</a>
+                        <a href="https://wa.me/971XXXXXXXXXXXX" class="contact-btn whatsapp">WhatsApp</a>
                     </div>
                 </div>
                 <div class="inquiry-form">
@@ -405,14 +410,23 @@
 
     <script>
         window.addEventListener('scroll', () => {
+            // Bento item animation
             const items = document.querySelectorAll('.bento-item');
             items.forEach(item => {
                 const rect = item.getBoundingClientRect();
-                if(rect.top < window.innerHeight) {
+                if(rect.top < window.innerHeight - 50) {
                     item.style.opacity = "1";
                     item.style.transform = "translateY(0)";
                 }
             });
+
+            // Back to top button visibility
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
         });
     </script>
 </body>
