@@ -224,7 +224,64 @@
             filter: brightness(1.1);
         }
 
+        /* --- New Inquiry Contact Box --- */
+        .inquiry-box {
+            max-width: 1000px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .inquiry-info {
+            background: linear-gradient(135deg, rgba(197, 160, 89, 0.1), transparent);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .inquiry-form { padding: 40px; background: rgba(0,0,0,0.2); }
+
+        .inquiry-form input, .inquiry-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: white;
+            outline: none;
+        }
+
+        .inquiry-form input:focus { border-color: var(--dubai-gold); }
+
+        .submit-btn {
+            background: var(--dubai-gold);
+            color: var(--deep-navy);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover { background: white; transform: scale(1.02); }
+
+        .info-item { display: flex; align-items: center; margin-bottom: 20px; color: rgba(255,255,255,0.8); }
+        .info-item i { color: var(--dubai-gold); margin-right: 15px; font-size: 1.2rem; }
+
         footer { text-align: center; padding: 50px; opacity: 0.5; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .inquiry-box { grid-template-columns: 1fr; }
+        }
 
     </style>
 </head>
@@ -236,7 +293,7 @@
 
     <nav>
         <div class="logo-box">
-            <img src="logo-2.png" alt="Expert Edge Solutions"> 
+            <img src="logo.jpg" alt="Expert Edge Solutions">
         </div>
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -250,7 +307,7 @@
         <div class="hero-content">
             <h1>EXPERT EDGE<br><span style="color:white">SOLUTIONS</span></h1>
         </div>
-        <p class="address-line"><i class="fas fa-map-marker-alt" style="color: var(--dubai-gold); margin-right: 8px;"></i> Al Rowaiyah First - Academic City - Dubai, UAE</p>
+        <p class="address-line"><i class="fas fa-map-marker-alt" style="color: var(--dubai-gold); margin-right: 8px;"></i> Palm Jumeirah, Dubai, United Arab Emirates</p>
     </section>
 
     <section class="experts-section">
@@ -306,17 +363,38 @@
     <section class="contact-section" id="cta">
         <div class="contact-container">
             <h2 style="font-family:'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px;">Ready to Elevate?</h2>
-            <p style="opacity:0.7">Connect with our experts for bespoke publication and design solutions.</p>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--dubai-gold);">Al Rowaiyah First - Academic City - Dubai, UAE</p>
+            <p style="opacity:0.7; margin-bottom: 30px;">Connect with our Dubai-based experts for bespoke publication and design solutions.</p>
             
-            <div class="contact-actions">
-                <a href="mailto:exedge.solutions@gmail.com" class="contact-btn">
-                    <i class="fas fa-envelope"></i> Email Us
-                </a>
-                
-                <a href="https://wa.me/971XXXXXXXXXXXX" target="_blank" class="contact-btn whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
+            <div class="inquiry-box">
+                <div class="inquiry-info">
+                    <div>
+                        <h3 style="color: var(--dubai-gold); margin-bottom: 20px;">Contact Details</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Palm Jumeirah, Dubai, UAE</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>exedge.solutions@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+971 XXXXXXXXXXXX</span>
+                        </div>
+                    </div>
+                    <div class="contact-actions" style="justify-content: flex-start; margin-top: 20px;">
+                        <a href="mailto:exedge.solutions@gmail.com" class="contact-btn" style="padding: 12px 20px;">Email</a>
+                        <a href="https://wa.me/971XXXXXXXXXXXX" class="contact-btn whatsapp" style="padding: 12px 20px;">WhatsApp</a>
+                    </div>
+                </div>
+                <div class="inquiry-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Tell us about your project..." rows="4" required></textarea>
+                        <button type="submit" class="submit-btn">Send Inquiry</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
