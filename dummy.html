@@ -118,12 +118,15 @@
             gap: 20px;
         }
 
+        .bento-link { text-decoration: none; color: white; display: block; }
+
         .bento-item {
             background: var(--glass-white);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 24px;
             padding: 40px;
             position: relative;
+            height: 100%;
             overflow: hidden;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
@@ -257,26 +260,37 @@
     <section class="services-section" id="services">
         <h2 style="text-align:center; margin-bottom:50px; font-weight:300; letter-spacing:5px; text-transform:uppercase;">Our Services</h2>
         <div class="bento-grid">
-            <div class="bento-item item-1">
-                <i class="fas fa-microchip"></i>
-                <h3>Technical Paper Writing</h3>
-                <p>Translating complex engineering into high-impact academic discourse for global journals.</p>
-            </div>
-            <div class="bento-item">
-                <i class="fas fa-globe"></i>
-                <h3>Website Designing</h3>
-                <p>Digital architecture for modern researchers.</p>
-            </div>
-            <div class="bento-item">
-                <i class="fas fa-feather-alt"></i>
-                <h3>Proofreading</h3>
-                <p>Meticulous refinement of your intellectual property.</p>
-            </div>
-            <div class="bento-item item-4">
-                <i class="fas fa-university"></i>
-                <h3>Publication & Proceedings</h3>
-                <p>End-to-end support for conference proceedings and journal submissions.</p>
-            </div>
+            <a href="https://expertedgesolutions.github.io/services/writing" class="bento-link item-1">
+                <div class="bento-item">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Technical Paper Writing</h3>
+                    <p>Translating complex engineering into high-impact academic discourse for global journals.</p>
+                </div>
+            </a>
+            
+            <a href="https://expertedgesolutions.github.io/services/designing" class="bento-link">
+                <div class="bento-item">
+                    <i class="fas fa-globe"></i>
+                    <h3>Website Designing</h3>
+                    <p>Digital architecture for modern researchers.</p>
+                </div>
+            </a>
+
+            <a href="https://expertedgesolutions.github.io/services/proofread" class="bento-link">
+                <div class="bento-item">
+                    <i class="fas fa-feather-alt"></i>
+                    <h3>Proofreading</h3>
+                    <p>Meticulous refinement of your intellectual property.</p>
+                </div>
+            </a>
+
+            <a href="https://expertedgesolutions.github.io/services/publication" class="bento-link item-4">
+                <div class="bento-item">
+                    <i class="fas fa-university"></i>
+                    <h3>Publication & Proceedings</h3>
+                    <p>End-to-end support for conference proceedings and journal submissions.</p>
+                </div>
+            </a>
         </div>
     </section>
 
