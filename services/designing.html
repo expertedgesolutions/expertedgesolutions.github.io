@@ -24,53 +24,40 @@
             z-index: -1;
         }
 
-        /* --- Floating Logo (Top Left) --- */
+        /* --- Floating Logo --- */
         .floating-logo {
             position: fixed;
-            top: 25px;
-            left: 25px;
+            top: 25px; left: 25px;
             z-index: 1001;
             background: rgba(10, 20, 40, 0.85);
             backdrop-filter: blur(15px);
-            padding: 10px;
-            border-radius: 15px;
+            padding: 10px; border-radius: 15px;
             border: 1px solid rgba(197, 160, 89, 0.3);
             transition: 0.3s;
         }
         .floating-logo img { height: 50px; filter: drop-shadow(0 0 5px var(--dubai-gold)); }
-        .floating-logo:hover { transform: scale(1.05); }
 
         /* --- Back to Top Arrow --- */
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
+            bottom: 30px; right: 30px;
+            width: 50px; height: 50px;
             background: var(--dubai-gold);
             color: var(--deep-navy);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            z-index: 1001;
-            transition: 0.3s;
-            opacity: 0;
-            visibility: hidden;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; z-index: 1001;
+            transition: 0.3s; opacity: 0; visibility: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
         .back-to-top.visible { opacity: 1; visibility: visible; }
 
         /* --- Hero --- */
         .hero {
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
+            height: 60vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; padding: 0 20px;
         }
         .hero h1 {
             font-family: 'Playfair Display', serif;
@@ -79,95 +66,49 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
-            line-height: 1.1;
         }
 
-        /* --- Features Grid --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 60px 8%;
-        }
+        /* --- Sections --- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 60px 8%; }
         .feature-card {
-            background: var(--glass-white);
-            padding: 40px;
-            border-radius: 25px;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.4s ease;
-            text-align: center;
+            background: var(--glass-white); padding: 40px; border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.1); transition: 0.4s; text-align: center;
         }
-        .feature-card:hover {
-            border-color: var(--dubai-gold);
-            transform: translateY(-10px);
-            background: rgba(197, 160, 89, 0.05);
-        }
+        .feature-card:hover { border-color: var(--dubai-gold); transform: translateY(-10px); }
         .feature-card i { font-size: 2.5rem; color: var(--dubai-gold); margin-bottom: 20px; }
 
-        /* --- Flashy Hosting Section --- */
         .hosting-highlight {
-            margin: 40px 8%;
-            padding: 50px;
-            border-radius: 30px;
+            margin: 40px 8%; padding: 50px; border-radius: 30px;
             background: linear-gradient(135deg, rgba(197, 160, 89, 0.15), transparent);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        .hosting-highlight::after {
-            content: "FREE";
-            position: absolute;
-            top: 10px; right: -30px;
-            background: var(--dubai-gold);
-            color: var(--deep-navy);
-            padding: 5px 40px;
-            transform: rotate(45deg);
-            font-weight: bold;
-            font-size: 0.8rem;
+            border: 1px solid rgba(197, 160, 89, 0.3); position: relative; overflow: hidden;
         }
 
         /* --- Contact Section --- */
-        .contact-section { padding: 80px 5%; background: linear-gradient(0deg, #050a18 0%, #0a1428 100%); }
+        .contact-section { padding: 80px 5%; }
         .contact-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.02);
-            padding: clamp(30px, 5vw, 60px);
-            border-radius: 40px;
-            border: 1px solid rgba(197, 160, 89, 0.2);
+            max-width: 1100px; margin: 0 auto;
+            background: rgba(255,255,255,0.02); padding: clamp(30px, 5vw, 60px);
+            border-radius: 40px; border: 1px solid rgba(197, 160, 89, 0.2);
             backdrop-filter: blur(10px);
         }
-        .inquiry-box {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 40px;
-            margin-top: 40px;
-            text-align: left;
-        }
+        .inquiry-box { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; margin-top: 40px; text-align: left; }
+
+        /* --- Details List --- */
+        .contact-details-list { margin: 25px 0; }
+        .detail-item { display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 0.9rem; }
+        .detail-item i { color: var(--dubai-gold); margin-right: 15px; font-size: 1.1rem; width: 20px; text-align: center; }
+        .detail-item span { opacity: 0.8; line-height: 1.4; }
 
         /* --- Grouped Contact Buttons --- */
-        .contact-group {
-            display: flex;
-            gap: 12px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
+        .contact-group { display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap; }
         .btn {
-            padding: 14px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: inline-flex;
-            align-items: center;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            padding: 14px 28px; border-radius: 50px; text-decoration: none;
+            font-weight: 700; font-size: 0.85rem; display: inline-flex;
+            align-items: center; transition: 0.3s; text-transform: uppercase;
         }
         .btn-email { background: var(--dubai-gold); color: var(--deep-navy); }
         .btn-whatsapp { background: #25D366; color: white; }
-        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .btn i { margin-right: 8px; font-size: 1.1rem; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
         /* --- Form --- */
         .inquiry-form input, .inquiry-form textarea {
@@ -175,17 +116,12 @@
             background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
             border-radius: 12px; color: white; outline: none;
         }
-        .inquiry-form input:focus, .inquiry-form textarea:focus { border-color: var(--dubai-gold); }
         .submit-btn {
             background: var(--dubai-gold); color: var(--deep-navy); width: 100%;
-            padding: 16px; border: none; border-radius: 12px; font-weight: 700;
-            cursor: pointer; transition: 0.3s;
+            padding: 16px; border: none; border-radius: 12px; font-weight: 700; cursor: pointer;
         }
 
-        @media (max-width: 900px) {
-            .inquiry-box { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3rem; }
-        }
+        @media (max-width: 900px) { .inquiry-box { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -196,70 +132,51 @@
         <a href="../index.html"><img src="logo.jpg" alt="Expert Edge Solutions"></a>
     </div>
 
-    <a href="#" class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
-    <section class="hero" id="top">
-        <p style="color: var(--dubai-gold); letter-spacing: 8px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px;">Digital Craftsmanship</p>
-        <h1>PREMIER WEBSITE<br>DESIGNING</h1>
-        <p style="max-width: 600px; opacity: 0.7; line-height: 1.6;">Elevating your digital presence through architectural precision and high-performance design.</p>
+    <section class="hero">
+        <p style="color: var(--dubai-gold); letter-spacing: 8px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 10px;">Modern Web Architecture</p>
+        <h1>WEBSITE<br>DESIGNING</h1>
     </section>
 
     <div class="services-grid">
-        <div class="feature-card">
-            <i class="fas fa-id-card"></i>
-            <h3>Personal Portfolios</h3>
-            <p>Sleek, professional identities for academics, researchers, and global consultants.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-building"></i>
-            <h3>Organizational Sites</h3>
-            <p>Comprehensive web solutions for research institutions and corporate entities.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-cloud-upload-alt"></i>
-            <h3>Domain & Hosting</h3>
-            <p>Full deployment support, from domain registration to server configuration.</p>
-        </div>
+        <div class="feature-card"><i class="fas fa-id-card"></i><h3>Personal Brands</h3><p>Elite portfolios for researchers and industry leaders.</p></div>
+        <div class="feature-card"><i class="fas fa-building"></i><h3>Organizational Hubs</h3><p>Scalable sites for research labs and institutions.</p></div>
+        <div class="feature-card"><i class="fas fa-cloud"></i><h3>Cloud Deployment</h3><p>Domain setup and high-speed hosting solutions.</p></div>
     </div>
 
     <section class="hosting-highlight">
-        <h2 style="font-family: 'Playfair Display', serif; color: var(--dubai-gold); margin-bottom: 15px;">Zero-Cost Professional Hosting</h2>
-        <p style="line-height: 1.8; opacity: 0.9;">
-            We specialize in deploying sites on high-speed, secure platforms like <strong>GitHub Pages (github.io)</strong>. This allows you to host your intellectual property for <strong>free</strong>, with zero monthly overhead.
-            <br><br>
-            <span style="border-bottom: 1px solid var(--dubai-gold); padding-bottom: 2px;">
-                <strong>Note:</strong> Our own official platform is proudly powered by GitHub Pages, ensuring maximum uptime and security.
-            </span>
-        </p>
+        <h2 style="font-family: 'Playfair Display', serif; color: var(--dubai-gold); margin-bottom: 10px;">Zero-Cost Professional Hosting</h2>
+        <p style="opacity: 0.9;">We leverage <strong>GitHub Pages (github.io)</strong> to provide free, secure, and ultra-fast hosting. Our own site is a live demonstration of this efficiency.</p>
     </section>
 
     <section class="contact-section">
         <div class="contact-container">
-            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem);">Start Your Digital Journey</h2>
-            <p style="opacity:0.6; margin-top: 10px;">Send us a message regarding your <strong>Website Designing</strong> project.</p>
-                                   
+            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.5rem);">Design Inquiry</h2>
+            <p style="opacity:0.6; margin-top: 5px;">Submit your project details below or reach out directly.</p>
             
-            <div class="info-item">
-            <i class="fas fa-envelope"></i>
-            <span>exedge.solutions@gmail.com</span>
-            </div>
-            <div class="info-item">
-            <i class="fab fa-whatsapp"></i>
-            <span>+971 XXXXXXXXXXXX</span>
-            </div>
-
             <div class="inquiry-box">
                 <div class="inquiry-info">
-                    <h3 style="color: var(--dubai-gold); margin-bottom: 15px;">Contact Info</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.6;">
-                        Our design experts will review your requirements and provide a bespoke architectural plan.
-                    </p>
+                    <h3 style="color: var(--dubai-gold); margin-bottom: 10px;">Direct Contact</h3>
                     
+                    <div class="contact-details-list">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Al Rowaiyah First, Academic City<br>Dubai, UAE</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>exedge.solutions@gmail.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+971 XXXXXXXXXXXX</span>
+                        </div>
+                    </div>
+
                     <div class="contact-group">
                         <a href="mailto:exedge.solutions@gmail.com" class="btn btn-email">
-                            <i class="fas fa-envelope"></i> Email
+                            <i class="fas fa-envelope"></i> Email Us
                         </a>
                         <a href="https://wa.me/971XXXXXXXXXXXX" class="btn btn-whatsapp">
                             <i class="fab fa-whatsapp"></i> WhatsApp
@@ -269,9 +186,9 @@
 
                 <div class="inquiry-form">
                     <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea rows="5" placeholder="Tell us about your project (Personal or Organization? Do you need a domain?)" required></textarea>
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <textarea rows="5" placeholder="Tell us about your website needs..." required></textarea>
                         <button type="submit" class="submit-btn">Send Design Inquiry</button>
                     </form>
                 </div>
@@ -279,20 +196,14 @@
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; opacity: 0.4; font-size: 0.75rem;">
-        <p>&copy; 2025 Expert Edge Solutions. Web Architecture Division.</p>
+    <footer style="text-align: center; padding: 40px; opacity: 0.3; font-size: 0.7rem;">
+        <p>&copy; 2025 Expert Edge Solutions. All Rights Reserved.</p>
     </footer>
 
     <script>
-        const backToTop = document.getElementById('backToTop');
-        
         window.addEventListener('scroll', () => {
-            // Toggle Back to Top Arrow
-            if (window.scrollY > 400) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
+            const btn = document.getElementById('backToTop');
+            window.scrollY > 300 ? btn.classList.add('visible') : btn.classList.remove('visible');
         });
     </script>
 </body>
