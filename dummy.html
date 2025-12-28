@@ -193,12 +193,23 @@
                 </div>
 
                 <div class="inquiry-form">
-                    <form>
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                        <textarea rows="5" placeholder="Tell us about your website needs..." required></textarea>
-                        <button type="submit" class="submit-btn">Send Design Inquiry</button>
-                    </form>
+<!-- modify this form HTML and place wherever you want your form -->
+<form
+  action="https://formspree.io/f/mqekdkdp"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+
                 </div>
             </div>
         </div>
