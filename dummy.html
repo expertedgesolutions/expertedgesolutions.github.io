@@ -1,1 +1,242 @@
-dummy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Edge Solutions | Dubai Premier Research Partners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --dubai-gold: #c5a059;
+            --deep-navy: #050a18;
+            --glass-white: rgba(255, 255, 255, 0.05);
+            --neon-blue: #00d2ff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        
+        body { background-color: var(--deep-navy); color: white; overflow-x: hidden; }
+
+        /* --- Luxury Background Animation --- */
+        .bg-gradient {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #102040 0%, #050a18 100%);
+            z-index: -1;
+        }
+
+        /* --- Floating Nav --- */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(10, 20, 40, 0.8);
+            backdrop-filter: blur(15px);
+            padding: 15px 40px;
+            border-radius: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .logo-box img { height: 45px; filter: drop-shadow(0 0 5px var(--dubai-gold)); }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover { color: var(--dubai-gold); text-shadow: 0 0 10px var(--dubai-gold); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            background: linear-gradient(to bottom, #ffffff, #c5a059);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            color: var(--dubai-gold);
+            font-size: 1.2rem;
+            letter-spacing: 8px;
+            margin: 20px 0;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        /* --- Interactive Service Bento Grid --- */
+        .services-section { padding: 100px 10%; }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 250px;
+            gap: 20px;
+        }
+
+        .bento-item {
+            background: var(--glass-white);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .bento-item:hover {
+            background: rgba(197, 160, 89, 0.1);
+            border-color: var(--dubai-gold);
+            transform: scale(1.02);
+        }
+
+        .bento-item i { font-size: 2.5rem; color: var(--dubai-gold); margin-bottom: 20px; }
+        .bento-item h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        
+        .item-1 { grid-column: span 2; } /* Large card */
+        .item-4 { grid-column: span 2; } /* Large card */
+
+        /* --- Contact Form Section --- */
+        .contact-section {
+            padding: 100px 10%;
+            background: linear-gradient(180deg, transparent, #0a1428);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.03);
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            text-align: center;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 30px;
+            background: var(--dubai-gold);
+            color: var(--deep-navy);
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.4s;
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(197, 160, 89, 0.5);
+            background: white;
+        }
+
+        footer { text-align: center; padding: 50px; opacity: 0.5; font-size: 0.8rem; }
+
+    </style>
+</head>
+<body>
+
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <div class="logo-box">
+            <img src="logo.jpg" alt="Expert Edge Solutions">
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Expertise</a>
+            <a href="mailto:exedge.solutions@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <p class="tagline">Dubai • Innovation • Excellence</p>
+        <div class="hero-content">
+            <h1>EXPERT EDGE<br><span style="color:white">SOLUTIONS</span></h1>
+        </div>
+        <a href="mailto:exedge.solutions@gmail.com" class="contact-btn" style="margin-top:40px">Get Started</a>
+    </section>
+
+    <section class="services-section" id="services">
+        <h2 style="text-align:center; margin-bottom:50px; font-weight:300; letter-spacing:5px; text-transform:uppercase;">Our Services</h2>
+        <div class="bento-grid">
+            <div class="bento-item item-1">
+                <i class="fas fa-microchip"></i>
+                <h3>Technical Paper Writing</h3>
+                <p>Translating complex engineering into high-impact academic discourse for global journals.</p>
+            </div>
+            <div class="bento-item">
+                <i class="fas fa-globe"></i>
+                <h3>Website Designing</h3>
+                <p>Digital architecture for modern researchers.</p>
+            </div>
+            <div class="bento-item">
+                <i class="fas fa-feather-alt"></i>
+                <h3>Proofreading</h3>
+                <p>Meticulous refinement of your intellectual property.</p>
+            </div>
+            <div class="bento-item item-4">
+                <i class="fas fa-university"></i>
+                <h3>Publication & Proceedings</h3>
+                <p>End-to-end support for conference proceedings and journal submissions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2 style="font-family:'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px;">Ready to Elevate?</h2>
+            <p style="opacity:0.7">Connect with our Dubai-based experts for bespoke publication and design solutions.</p>
+            <a href="mailto:exedge.solutions@gmail.com" class="contact-btn">
+                <i class="fas fa-envelope" style="margin-right:10px"></i> exedge.solutions@gmail.com
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Expert Edge Solutions - Dubai Startup District. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth reveal on scroll
+        window.addEventListener('scroll', () => {
+            const items = document.querySelectorAll('.bento-item');
+            items.forEach(item => {
+                const speed = 0.05;
+                const rect = item.getBoundingClientRect();
+                if(rect.top < window.innerHeight) {
+                    item.style.opacity = "1";
+                    item.style.transform = "translateY(0)";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
