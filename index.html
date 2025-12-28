@@ -16,7 +16,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
         
-        body { background-color: var(--deep-navy); color: white; overflow-x: hidden; }
+        body { background-color: var(--deep-navy); color: white; overflow-x: hidden; width: 100%; }
 
         /* --- Enhanced Background Design --- */
         .bg-gradient {
@@ -49,14 +49,14 @@
         /* --- Floating Nav --- */
         nav {
             position: fixed;
-            top: 20px;
+            top: 15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 90%;
+            width: 95%;
             max-width: 1200px;
-            background: rgba(10, 20, 40, 0.8);
+            background: rgba(10, 20, 40, 0.85);
             backdrop-filter: blur(15px);
-            padding: 15px 40px;
+            padding: 10px 25px;
             border-radius: 100px;
             display: flex;
             justify-content: space-between;
@@ -65,13 +65,14 @@
             border: 1px solid rgba(197, 160, 89, 0.3);
         }
 
-        .logo-box img { height: 45px; filter: drop-shadow(0 0 5px var(--dubai-gold)); }
+        .logo-box img { height: 35px; filter: drop-shadow(0 0 5px var(--dubai-gold)); }
 
+        .nav-links { display: flex; align-items: center; }
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.9rem;
+            margin-left: 20px;
+            font-size: 0.8rem;
             letter-spacing: 1px;
             transition: 0.3s;
             text-transform: uppercase;
@@ -81,48 +82,50 @@
 
         /* --- Hero Section --- */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding-top: 80px;
+            padding: 120px 20px 40px 20px;
         }
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-size: clamp(2.2rem, 10vw, 5.5rem);
             background: linear-gradient(to bottom, #ffffff, #c5a059);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.1;
+            margin-bottom: 15px;
         }
 
         .tagline {
             color: var(--dubai-gold);
-            font-size: 1.2rem;
-            letter-spacing: 8px;
-            margin: 20px 0 10px 0;
+            font-size: clamp(0.7rem, 3vw, 1.2rem);
+            letter-spacing: clamp(3px, 1.5vw, 8px);
+            margin: 10px 0;
             text-transform: uppercase;
             opacity: 0.8;
         }
 
         .address-line {
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+            font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+            letter-spacing: 1px;
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-weight: 300;
+            max-width: 80%;
         }
 
         /* --- Interactive Service Bento Grid --- */
-        .services-section { padding: 100px 10%; }
+        .services-section { padding: 80px 5%; }
 
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-auto-rows: 250px;
+            grid-auto-rows: auto;
             gap: 20px;
         }
 
@@ -132,55 +135,53 @@
             background: var(--glass-white);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 24px;
-            padding: 40px;
-            position: relative;
+            padding: 30px;
             height: 100%;
-            overflow: hidden;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
             backdrop-filter: blur(5px);
         }
 
         .bento-item:hover {
             background: rgba(197, 160, 89, 0.1);
             border-color: var(--dubai-gold);
-            transform: scale(1.02);
+            transform: translateY(-5px);
         }
 
-        .bento-item i { font-size: 2.5rem; color: var(--dubai-gold); margin-bottom: 20px; }
-        .bento-item h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        .bento-item i { font-size: 2rem; color: var(--dubai-gold); margin-bottom: 15px; }
+        .bento-item h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .bento-item p { font-size: 0.9rem; line-height: 1.5; opacity: 0.8; }
         
         .item-1 { grid-column: span 2; }
         .item-4 { grid-column: span 2; }
 
         /* --- Experts Section --- */
         .experts-section {
-            padding: 80px 10%;
+            padding: 60px 8%;
             text-align: center;
             background: rgba(255,255,255,0.02);
         }
 
         .experts-container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             line-height: 1.8;
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             color: rgba(255,255,255,0.9);
         }
 
-        .experts-container strong { color: var(--dubai-gold); }
+        .experts-container h2 { font-size: clamp(1.4rem, 4vw, 2.2rem); }
 
         /* --- Contact Form Section --- */
         .contact-section {
-            padding: 100px 10%;
+            padding: 60px 5%;
             background: linear-gradient(180deg, transparent, #0a1428);
         }
 
         .contact-container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             background: rgba(255,255,255,0.03);
-            padding: 50px;
+            padding: clamp(20px, 5vw, 50px);
             border-radius: 30px;
             border: 1px solid rgba(197, 160, 89, 0.2);
             text-align: center;
@@ -189,10 +190,10 @@
 
         .contact-actions {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .contact-btn {
@@ -200,31 +201,78 @@
             align-items: center;
             background: var(--dubai-gold);
             color: var(--deep-navy);
-            padding: 18px 35px;
+            padding: 12px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
             transition: 0.4s;
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
-        .contact-btn.whatsapp {
-            background: #25D366;
+        .contact-btn.whatsapp { background: #25D366; color: white; }
+        .contact-btn i { margin-right: 8px; font-size: 1rem; }
+
+        /* --- New Inquiry Contact Box --- */
+        .inquiry-box {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 25px;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .inquiry-info {
+            background: linear-gradient(135deg, rgba(197, 160, 89, 0.1), transparent);
+            padding: 30px;
+        }
+
+        .inquiry-form { padding: 30px; background: rgba(0,0,0,0.2); }
+
+        .inquiry-form input, .inquiry-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
             color: white;
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
         }
 
-        .contact-btn i { margin-right: 12px; font-size: 1.2rem; }
-
-        .contact-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            filter: brightness(1.1);
+        .submit-btn {
+            background: var(--dubai-gold);
+            color: var(--deep-navy);
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            width: 100%;
+            cursor: pointer;
         }
 
-        footer { text-align: center; padding: 50px; opacity: 0.5; font-size: 0.8rem; }
+        .info-item { display: flex; align-items: flex-start; margin-bottom: 20px; font-size: 0.9rem; }
+        .info-item i { color: var(--dubai-gold); margin-right: 12px; margin-top: 3px; }
+
+        footer { text-align: center; padding: 40px 20px; opacity: 0.5; font-size: 0.75rem; }
+
+        /* --- Mobile Responsive Tweak --- */
+        @media (max-width: 900px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .item-1, .item-4 { grid-column: span 1; }
+            .inquiry-box { grid-template-columns: 1fr; }
+            .nav-links a:not(:last-child) { display: none; } /* Hide some links on mobile */
+        }
+
+        @media (max-width: 480px) {
+            nav { border-radius: 20px; padding: 10px 15px; }
+            .contact-actions { flex-direction: column; }
+            .contact-btn { width: 100%; justify-content: center; }
+            .hero { padding-top: 100px; }
+        }
 
     </style>
 </head>
@@ -236,7 +284,7 @@
 
     <nav>
         <div class="logo-box">
-            <img src="logo-2.png" alt="Expert Edge Solutions"> 
+            <img src="logo.jpg" alt="Expert Edge Solutions">
         </div>
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -267,7 +315,7 @@
     </section>
 
     <section class="services-section" id="services">
-        <h2 style="text-align:center; margin-bottom:50px; font-weight:300; letter-spacing:5px; text-transform:uppercase;">Our Services</h2>
+        <h2 style="text-align:center; margin-bottom:40px; font-weight:300; letter-spacing:5px; text-transform:uppercase; font-size: clamp(1.2rem, 5vw, 1.8rem);">Our Services</h2>
         <div class="bento-grid">
             <a href="https://expertedgesolutions.github.io/services/writing" class="bento-link item-1">
                 <div class="bento-item">
@@ -305,18 +353,39 @@
 
     <section class="contact-section" id="cta">
         <div class="contact-container">
-            <h2 style="font-family:'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px;">Ready to Elevate?</h2>
-            <p style="opacity:0.7">Connect with our experts for bespoke publication and design solutions.</p>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--dubai-gold);">Al Rowaiyah First - Academic City - Dubai, UAE</p>
+            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 15px;">Ready to Elevate?</h2>
+            <p style="opacity:0.7; margin-bottom: 20px; font-size: 0.9rem;">Connect with our Dubai-based experts for bespoke publication and design solutions.</p>
             
-            <div class="contact-actions">
-                <a href="mailto:exedge.solutions@gmail.com" class="contact-btn">
-                    <i class="fas fa-envelope"></i> Email Us
-                </a>
-                
-                <a href="https://wa.me/971XXXXXXXXXXXX" target="_blank" class="contact-btn whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
+            <div class="inquiry-box">
+                <div class="inquiry-info">
+                    <div>
+                        <h3 style="color: var(--dubai-gold); margin-bottom: 20px;">Contact Details</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Al Rowaiyah First - Academic City - Dubai, UAE</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>exedge.solutions@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+971 XXXXXXXXXXXX</span>
+                        </div>
+                    </div>
+                    <div class="contact-actions" style="justify-content: flex-start;">
+                        <a href="mailto:exedge.solutions@gmail.com" class="contact-btn">Email</a>
+                        <a href="https://wa.me/971XXXXXXXXXXXX" class="contact-btn whatsapp">WhatsApp</a>
+                    </div>
+                </div>
+                <div class="inquiry-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Tell us about your project..." rows="4" required></textarea>
+                        <button type="submit" class="submit-btn">Send Inquiry</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -330,7 +399,7 @@
             const items = document.querySelectorAll('.bento-item');
             items.forEach(item => {
                 const rect = item.getBoundingClientRect();
-                if(rect.top < window.innerHeight) {
+                if(rect.top < window.innerHeight - 50) {
                     item.style.opacity = "1";
                     item.style.transform = "translateY(0)";
                 }
