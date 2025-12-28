@@ -68,28 +68,31 @@
             margin-bottom: 20px;
         }
 
-        /* --- Sections --- */
+        /* --- Service Cards --- */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 60px 8%; }
         .feature-card {
             background: var(--glass-white); padding: 40px; border-radius: 25px;
             border: 1px solid rgba(255,255,255,0.1); transition: 0.4s; text-align: center;
         }
-        .feature-card:hover { border-color: var(--dubai-gold); transform: translateY(-10px); }
+        .feature-card:hover { border-color: var(--dubai-gold); transform: translateY(-10px); background: rgba(197, 160, 89, 0.05); }
         .feature-card i { font-size: 2.5rem; color: var(--dubai-gold); margin-bottom: 20px; }
 
+        /* --- Reverted Hosting Highlight (The Flashy One) --- */
         .hosting-highlight {
-            margin: 40px 8%; padding: 50px; border-radius: 30px;
-            background: linear-gradient(135deg, rgba(197, 160, 89, 0.15), transparent);
-            border: 1px solid rgba(197, 160, 89, 0.3); position: relative; overflow: hidden;
+            background: linear-gradient(90deg, rgba(197, 160, 89, 0.1), transparent);
+            padding: 60px 8%;
+            border-radius: 40px;
+            margin: 40px 8%;
+            border-left: 5px solid var(--dubai-gold);
         }
 
         /* --- Contact Section --- */
-        .contact-section { padding: 80px 5%; }
+        .contact-section { padding: 80px 5%; background: #0a1428; }
         .contact-container {
             max-width: 1100px; margin: 0 auto;
-            background: rgba(255,255,255,0.02); padding: clamp(30px, 5vw, 60px);
-            border-radius: 40px; border: 1px solid rgba(197, 160, 89, 0.2);
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.03); padding: clamp(20px, 5vw, 50px);
+            border-radius: 30px; border: 1px solid rgba(197, 160, 89, 0.2);
+            text-align: center; backdrop-filter: blur(10px);
         }
         .inquiry-box { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; margin-top: 40px; text-align: left; }
 
@@ -129,31 +132,36 @@
     <div class="bg-gradient"></div>
 
     <div class="floating-logo">
-        <a href="../index.html"><img src="logo.jpg" alt="Expert Edge Solutions"></a>
+        <a href="../index.html"><img src="logo.jpg" alt="Logo"></a>
     </div>
 
     <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
     <section class="hero">
-        <p style="color: var(--dubai-gold); letter-spacing: 8px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 10px;">Modern Web Architecture</p>
+        <p style="color: var(--dubai-gold); letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem;">Digital Architecture</p>
         <h1>WEBSITE<br>DESIGNING</h1>
+        <p style="max-width: 700px; opacity: 0.7; font-size: 1.1rem; text-align: center; margin-top: 15px;">We don't just build websites; we build digital legacies for researchers and global organizations.</p>
     </section>
 
     <div class="services-grid">
-        <div class="feature-card"><i class="fas fa-id-card"></i><h3>Personal Brands</h3><p>Elite portfolios for researchers and industry leaders.</p></div>
-        <div class="feature-card"><i class="fas fa-building"></i><h3>Organizational Hubs</h3><p>Scalable sites for research labs and institutions.</p></div>
-        <div class="feature-card"><i class="fas fa-cloud"></i><h3>Cloud Deployment</h3><p>Domain setup and high-speed hosting solutions.</p></div>
+        <div class="feature-card"><i class="fas fa-user-tie"></i><h3>Personal Brand</h3><p>Elite portfolios for researchers and industry leaders.</p></div>
+        <div class="feature-card"><i class="fas fa-sitemap"></i><h3>Organizational Hubs</h3><p>Scalable, high-performance websites for research labs and institutions.</p></div>
+        <div class="feature-card"><i class="fas fa-server"></i><h3>End-to-End Setup</h3><p>Assistance in domain acquisition and professional hosting infrastructure.</p></div>
     </div>
 
     <section class="hosting-highlight">
-        <h2 style="font-family: 'Playfair Display', serif; color: var(--dubai-gold); margin-bottom: 10px;">Zero-Cost Professional Hosting</h2>
-        <p style="opacity: 0.9;">We leverage <strong>GitHub Pages (github.io)</strong> to provide free, secure, and ultra-fast hosting. Our own site is a live demonstration of this efficiency.</p>
+        <h2 style="font-family: 'Playfair Display', serif; color: var(--dubai-gold); margin-bottom: 20px;">The "Open Science" Approach</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+            We are pioneers in cost-effective, high-impact hosting. For many of our clients, we leverage <strong>GitHub Pages (github.io)</strong> to provide ultra-fast, secure, and 100% free hosting. 
+            <br><br>
+            <span style="color: var(--dubai-gold); font-weight: bold;">Pro Tip:</span> This current website is powered by GitHub infrastructure—demonstrating that professional excellence doesn't always require expensive monthly bills.
+        </p>
     </section>
 
     <section class="contact-section">
         <div class="contact-container">
-            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.5rem);">Design Inquiry</h2>
-            <p style="opacity:0.6; margin-top: 5px;">Submit your project details below or reach out directly.</p>
+            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 10px;">Design Inquiry</h2>
+            <p style="opacity:0.7;">Contact us with your project details to get started.</p>
             
             <div class="inquiry-box">
                 <div class="inquiry-info">
@@ -196,7 +204,7 @@
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; opacity: 0.3; font-size: 0.7rem;">
+    <footer style="text-align: center; padding: 40px; opacity: 0.4; font-size: 0.75rem;">
         <p>&copy; 2025 Expert Edge Solutions. All Rights Reserved.</p>
     </footer>
 
