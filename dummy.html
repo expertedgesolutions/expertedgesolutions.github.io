@@ -14,7 +14,7 @@
             --neon-blue: #00d2ff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
         
         body { background-color: var(--deep-navy); color: white; overflow-x: hidden; }
 
@@ -142,6 +142,23 @@
         .item-1 { grid-column: span 2; }
         .item-4 { grid-column: span 2; }
 
+        /* --- Experts Section --- */
+        .experts-section {
+            padding: 80px 10%;
+            text-align: center;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .experts-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .experts-container strong { color: var(--dubai-gold); }
+
         /* --- Contact Form Section --- */
         .contact-section {
             padding: 100px 10%;
@@ -213,7 +230,7 @@
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#services">Expertise</a>
-            <a href="mailto:exedge.solutions@gmail.com">Contact</a>
+            <a href="#cta">Contact</a>
         </div>
     </nav>
 
@@ -222,8 +239,18 @@
         <div class="hero-content">
             <h1>EXPERT EDGE<br><span style="color:white">SOLUTIONS</span></h1>
         </div>
-        <div class="contact-actions">
-            <a href="mailto:exedge.solutions@gmail.com" class="contact-btn">Get Started</a>
+    </section>
+
+    <section class="experts-section">
+        <div class="experts-container">
+            <h2 style="color: var(--dubai-gold); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 3px;">A Global Network of Excellence</h2>
+            <p>
+                At Expert Edge Solutions, we pride ourselves on a borderless commitment to intellectual growth. Our core strength lies in our elite network of subject matter experts spanning across the <strong>USA, UK, Australia, UAE, India</strong>, and beyond. 
+            </p>
+            <br>
+            <p>
+                We bridge the gap between <strong>High-End Academic Research</strong> and <strong>Cutting-Edge Industrial Application</strong>. Our team consists of distinguished professors, seasoned researchers, and industry visionaries who have held leadership roles at Fortune 500 companies and premier global universities. This unique synergy allows us to provide technical paper writing, publication support, and architectural website design that isn't just theoretically sound, but industrially relevant.
+            </p>
         </div>
     </section>
 
@@ -253,7 +280,7 @@
         </div>
     </section>
 
-    <section class="contact-section">
+    <section class="contact-section" id="cta">
         <div class="contact-container">
             <h2 style="font-family:'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px;">Ready to Elevate?</h2>
             <p style="opacity:0.7">Connect with our Dubai-based experts for bespoke publication and design solutions.</p>
