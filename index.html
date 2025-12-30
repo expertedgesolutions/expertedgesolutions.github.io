@@ -151,8 +151,7 @@
         .bento-item h3 { font-size: 1.2rem; margin-bottom: 10px; }
         .bento-item p { font-size: 0.9rem; line-height: 1.5; opacity: 0.8; }
         
-        .item-1 { grid-column: span 2; }
-        .item-4 { grid-column: span 2; }
+        .item-wide { grid-column: span 2; }
 
         /* --- Experts Section --- */
         .experts-section {
@@ -238,7 +237,7 @@
         /* --- Mobile Responsive Tweak --- */
         @media (max-width: 900px) {
             .bento-grid { grid-template-columns: 1fr; }
-            .item-1, .item-4 { grid-column: span 1; }
+            .item-wide { grid-column: span 1; }
             .nav-links a:not(:last-child) { display: none; } 
         }
 
@@ -292,7 +291,7 @@
     <section class="services-section" id="services">
         <h2 style="text-align:center; margin-bottom:40px; font-weight:300; letter-spacing:5px; text-transform:uppercase; font-size: clamp(1.2rem, 5vw, 1.8rem);">Our Services</h2>
         <div class="bento-grid">
-            <a href="https://expertedgesolutions.github.io/services/writing" class="bento-link item-1">
+            <a href="https://expertedgesolutions.github.io/services/writing" class="bento-link item-wide">
                 <div class="bento-item">
                     <i class="fas fa-microchip"></i>
                     <h3>Technical Paper Writing</h3>
@@ -316,11 +315,27 @@
                 </div>
             </a>
 
-            <a href="https://expertedgesolutions.github.io/services/publication" class="bento-link item-4">
+            <a href="https://expertedgesolutions.github.io/services/proposals" class="bento-link item-wide">
+                <div class="bento-item">
+                    <i class="fas fa-file-signature"></i>
+                    <h3>Proposal & Project Writing</h3>
+                    <p>Expert drafting for funded projects (Govt/Private) and student-led academic research initiatives.</p>
+                </div>
+            </a>
+
+            <a href="https://expertedgesolutions.github.io/services/publication" class="bento-link item-wide">
                 <div class="bento-item">
                     <i class="fas fa-university"></i>
                     <h3>Publication & Proceedings</h3>
                     <p>End-to-end support for conference proceedings and journal submissions.</p>
+                </div>
+            </a>
+
+            <a href="https://expertedgesolutions.github.io/services/consultancy" class="bento-link">
+                <div class="bento-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Higher Studies Consultancy</h3>
+                    <p>Finding top-tier universities, scholarship location, and professional application preparation.</p>
                 </div>
             </a>
         </div>
