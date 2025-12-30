@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publication & Proceedings | Expert Edge Solutions</title>
+    <title>Expert Edge Solutions | Premier Research Partners</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -11,225 +11,379 @@
             --dubai-gold: #c5a059;
             --deep-navy: #050a18;
             --glass-white: rgba(255, 255, 255, 0.05);
+            --neon-blue: #00d2ff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+        
         body { background-color: var(--deep-navy); color: white; overflow-x: hidden; width: 100%; }
 
-        /* --- Background --- */
+        /* --- Enhanced Background Design --- */
         .bg-gradient {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #102040 0%, #050a18 100%);
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(197, 160, 89, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(0, 210, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, #102040 0%, #050a18 100%);
             z-index: -1;
         }
 
-        /* --- Floating Logo --- */
-        .floating-logo {
+        .bg-ornament {
             position: fixed;
-            top: 25px; left: 25px;
-            z-index: 1001;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(var(--dubai-gold), transparent);
+            filter: blur(100px);
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: -1;
+            animation: float 20s infinite alternate;
+        }
+
+        @keyframes float {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
+        }
+
+        /* --- Floating Nav --- */
+        nav {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1200px;
             background: rgba(10, 20, 40, 0.85);
             backdrop-filter: blur(15px);
-            padding: 10px; border-radius: 15px;
+            padding: 10px 25px;
+            border-radius: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
             border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .logo-box img { height: 50px; filter: drop-shadow(0 0 5px var(--dubai-gold)); }
+
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
             transition: 0.3s;
+            text-transform: uppercase;
         }
-        .floating-logo img { height: 50px; filter: drop-shadow(0 0 5px var(--dubai-gold)); }
 
-        /* --- Back to Top --- */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px; right: 30px;
-            width: 50px; height: 50px;
-            background: var(--dubai-gold);
-            color: var(--deep-navy);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            text-decoration: none; z-index: 1001;
-            transition: 0.3s; opacity: 0; visibility: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .nav-links a:hover { color: var(--dubai-gold); text-shadow: 0 0 10px var(--dubai-gold); }
 
-        /* --- Hero --- */
+        /* --- Hero Section --- */
         .hero {
-            height: 65vh;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            text-align: center; padding: 0 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 40px 20px;
         }
-        .hero h1 {
+
+        .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.2rem, 8vw, 4.5rem);
-            background: linear-gradient(to bottom, #ffffff, var(--dubai-gold));
+            font-size: clamp(2.2rem, 10vw, 5.5rem);
+            background: linear-gradient(to bottom, #ffffff, #c5a059);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            line-height: 1.1;
+            margin-bottom: 15px;
         }
 
-        /* --- Content Sections --- */
-        .section-title {
-            text-align: center;
+        .tagline {
             color: var(--dubai-gold);
-            letter-spacing: 4px;
+            font-size: clamp(0.7rem, 3vw, 1.2rem);
+            letter-spacing: clamp(3px, 1.5vw, 8px);
+            margin: 10px 0;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-bottom: 40px;
+            opacity: 0.8;
         }
 
-        .services-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px; 
-            padding: 20px 8% 60px 8%; 
+        .address-line {
+            font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            font-weight: 300;
+            max-width: 80%;
         }
 
-        .feature-card {
-            background: var(--glass-white); 
-            padding: 40px; 
-            border-radius: 25px;
-            border: 1px solid rgba(255,255,255,0.1); 
-            transition: 0.4s; 
-            text-align: left;
-        }
-        .feature-card:hover { 
-            border-color: var(--dubai-gold); 
-            transform: translateY(-10px); 
-            background: rgba(197, 160, 89, 0.05); 
-        }
-        .feature-card i { font-size: 2.2rem; color: var(--dubai-gold); margin-bottom: 20px; }
-        .feature-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
-        .feature-card p { opacity: 0.7; font-size: 0.95rem; line-height: 1.6; }
+        /* --- Interactive Service Bento Grid --- */
+        .services-section { padding: 80px 5%; }
 
-        /* --- Flashy Extension Box --- */
-        .hosting-highlight {
-            background: linear-gradient(90deg, rgba(197, 160, 89, 0.1), transparent);
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: auto;
+            gap: 20px;
+        }
+
+        .bento-link { text-decoration: none; color: white; display: block; }
+
+        .bento-item {
+            background: var(--glass-white);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 30px;
+            height: 100%;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(5px);
+        }
+
+        .bento-item:hover {
+            background: rgba(197, 160, 89, 0.1);
+            border-color: var(--dubai-gold);
+            transform: translateY(-5px);
+        }
+
+        .bento-item i { font-size: 2rem; color: var(--dubai-gold); margin-bottom: 15px; }
+        .bento-item h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .bento-item p { font-size: 0.9rem; line-height: 1.5; opacity: 0.8; }
+        
+        .item-wide { grid-column: span 2; }
+
+        /* --- Experts Section --- */
+        .experts-section {
             padding: 60px 8%;
-            border-radius: 40px;
-            margin: 40px 8%;
-            border-left: 5px solid var(--dubai-gold);
+            text-align: center;
+            background: rgba(255,255,255,0.02);
         }
 
-        /* --- Contact Section --- */
-        .contact-section { padding: 80px 5%; background: #0a1428; }
+        .experts-container {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .experts-container h2 { font-size: clamp(1.4rem, 4vw, 2.2rem); }
+
+        /* --- Contact Form Section --- */
+        .contact-section {
+            padding: 60px 5%;
+            background: linear-gradient(180deg, transparent, #0a1428);
+        }
+
         .contact-container {
-            max-width: 1100px; margin: 0 auto;
-            background: rgba(255,255,255,0.03); padding: clamp(20px, 5vw, 50px);
-            border-radius: 30px; border: 1px solid rgba(197, 160, 89, 0.2);
-            text-align: center; backdrop-filter: blur(10px);
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.03);
+            padding: clamp(20px, 5vw, 50px);
+            border-radius: 30px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px);
         }
-        .inquiry-box { display: flex; flex-direction: column; align-items: center; margin-top: 40px; text-align: center; }
 
-        .contact-details-list { margin: 25px 0; }
-        .detail-item { display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 0.9rem; justify-content: center; }
-        .detail-item i { color: var(--dubai-gold); margin-right: 15px; font-size: 1.1rem; width: 20px; text-align: center; }
-        .detail-item span { opacity: 0.8; line-height: 1.4; text-align: left; }
-
-        .contact-group { display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap; justify-content: center; }
-        .btn {
-            padding: 14px 28px; border-radius: 50px; text-decoration: none;
-            font-weight: 700; font-size: 0.85rem; display: inline-flex;
-            align-items: center; transition: 0.3s; text-transform: uppercase;
+        .contact-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
         }
-        .btn-email { background: var(--dubai-gold); color: var(--deep-navy); }
-        .btn-whatsapp { background: #25D366; color: white; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        @media (max-width: 900px) { .inquiry-box { grid-template-columns: 1fr; } }
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            background: var(--dubai-gold);
+            color: var(--deep-navy);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.4s;
+            font-size: 0.8rem;
+        }
+
+        .contact-btn.whatsapp { background: #25D366; color: white; }
+        .contact-btn i { margin-right: 8px; font-size: 1rem; }
+
+        /* --- Updated Inquiry Box (Centered without form) --- */
+        .inquiry-box {
+            max-width: 600px;
+            margin: 40px auto;
+            display: block; /* Removed grid */
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 25px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .inquiry-info {
+            background: linear-gradient(135deg, rgba(197, 160, 89, 0.1), transparent);
+            padding: 40px;
+        }
+
+        .info-item { display: flex; align-items: flex-start; justify-content: center; margin-bottom: 20px; font-size: 0.9rem; }
+        .info-item i { color: var(--dubai-gold); margin-right: 12px; margin-top: 3px; }
+
+        footer { text-align: center; padding: 40px 20px; opacity: 0.5; font-size: 0.75rem; }
+
+        /* --- Mobile Responsive Tweak --- */
+        @media (max-width: 900px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .item-wide { grid-column: span 1; }
+            .nav-links a:not(:last-child) { display: none; } 
+        }
+
+        @media (max-width: 480px) {
+            nav { border-radius: 20px; padding: 10px 15px; }
+            .contact-actions { flex-direction: column; }
+            .contact-btn { width: 100%; justify-content: center; }
+            .hero { padding-top: 100px; }
+        }
+
     </style>
 </head>
 <body>
 
     <div class="bg-gradient"></div>
+    <div class="bg-ornament" style="top: 10%; left: 10%;"></div>
+    <div class="bg-ornament" style="bottom: 10%; right: 10%; animation-delay: -5s;"></div>
 
-    <div class="floating-logo">
-        <a href="../index.html"><img src="logo.jpg" alt="Logo"></a>
-    </div>
+    <nav>
+        <div class="logo-box">
+            <img src="logo.jpg" alt="Expert Edge Solutions">
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Expertise</a>
+            <a href="#cta">Contact</a>
+        </div>
+    </nav>
 
-    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
-
-    <section class="hero">
-        <p style="color: var(--dubai-gold); letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem;">Scholarly Dissemination</p>
-        <h1>PROCEEDINGS &<br>JOURNAL EXTENSIONS</h1>
-        <p style="max-width: 700px; opacity: 0.7; font-size: 1.1rem; text-align: center; margin-top: 15px;">Bridging the gap between conference presentations and high-impact journal publications.</p>
+    <section class="hero" id="home">
+        <p class="tagline">Precision • Knowledge • Excellence</p>
+        <div class="hero-content">
+            <h1>EXPERT EDGE<br><span style="color:white">SOLUTIONS</span></h1>
+        </div>
+        <p class="address-line"><i class="fas fa-map-marker-alt" style="color: var(--dubai-gold); margin-right: 8px;"></i> Al Rowaiyah First - Academic City - Dubai, UAE</p>
     </section>
 
-    <p class="section-title">Strategic Publication Services</p>
-
-    <div class="services-grid">
-        <div class="feature-card">
-            <i class="fas fa-tasks"></i>
-            <h3>Paper Organization</h3>
-            <p>Structuring manuscripts to align perfectly with specific conference tracks and proceedings guidelines.</p>
+    <section class="experts-section">
+        <div class="experts-container">
+            <h2 style="color: var(--dubai-gold); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 3px;">A Global Network of Excellence</h2>
+            <p>
+                At Expert Edge Solutions, we pride ourselves on a borderless commitment to intellectual growth. Our core strength lies in our elite network of subject matter experts spanning across the <strong>USA, UK, Australia, Canada, Sweden, Poland, UAE, India</strong>, and beyond. 
+            </p>
+            <br>
+            <p>
+                We bridge the gap between <strong>High-End Academic Research</strong> and <strong>Cutting-Edge Industrial Application</strong>. Our team consists of distinguished professors, seasoned researchers, and industry visionaries who have held leadership roles at Fortune 500 companies and premier global universities. This unique synergy allows us to provide technical paper writing, publication support, and architectural website design that isn't just theoretically sound, but industrially relevant.
+            </p>
         </div>
-        <div class="feature-card">
-            <i class="fas fa-file-invoice"></i>
-            <h3>Standard Formatting</h3>
-            <p>Precise LaTeX or Word formatting in accordance with IEEE, Springer, Elsevier, or ACM publisher standards.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-paper-plane"></i>
-            <h3>Application Support</h3>
-            <p>Full guidance through the submission portal, copyright processes, and camera-ready preparation.</p>
-        </div>
-    </div>
-
-    <section class="hosting-highlight">
-        <h2 style="font-family: 'Playfair Display', serif; color: var(--dubai-gold); margin-bottom: 20px;">The Journal Extension Strategy</h2>
-        <p style="font-size: 1.1rem; line-height: 1.8;">
-            Maximize the impact of your research. We help authors identify <strong>Journal Extensions</strong> for their conference papers. This involves planning 30-40% new technical content, attracting special issues, and navigating the expanded peer-review process for Q1/Q2 journals.
-            <br><br>
-            <span style="color: var(--dubai-gold); font-weight: bold;">Pro Tip:</span> Transforming a proceeding into a journal article is the most efficient way to build a high-citation academic profile.
-        </p>
     </section>
 
-    <section class="contact-section">
+    <section class="services-section" id="services">
+        <h2 style="text-align:center; margin-bottom:40px; font-weight:300; letter-spacing:5px; text-transform:uppercase; font-size: clamp(1.2rem, 5vw, 1.8rem);">Our Services</h2>
+        <div class="bento-grid">
+            <a href="https://expertedgesolutions.github.io/services/writing" class="bento-link item-wide">
+                <div class="bento-item">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Technical Paper Writing</h3>
+                    <p>Translating complex engineering into high-impact academic discourse for global journals.</p>
+                </div>
+            </a>
+            
+            <a href="https://expertedgesolutions.github.io/services/designing" class="bento-link">
+                <div class="bento-item">
+                    <i class="fas fa-globe"></i>
+                    <h3>Website Designing</h3>
+                    <p>Digital architecture for modern researchers.</p>
+                </div>
+            </a>
+
+            <a href="https://expertedgesolutions.github.io/services/proofread" class="bento-link">
+                <div class="bento-item">
+                    <i class="fas fa-feather-alt"></i>
+                    <h3>Proofreading</h3>
+                    <p>Meticulous refinement of your intellectual property.</p>
+                </div>
+            </a>
+
+            <a href="https://expertedgesolutions.github.io/services/proposals" class="bento-link item-wide">
+                <div class="bento-item">
+                    <i class="fas fa-file-signature"></i>
+                    <h3>Proposal & Project Writing</h3>
+                    <p>Expert drafting for funded projects (Govt/Private) and student-led academic research initiatives.</p>
+                </div>
+            </a>
+
+            <a href="https://expertedgesolutions.github.io/services/publication" class="bento-link">
+                <div class="bento-item">
+                    <i class="fas fa-university"></i>
+                    <h3>Publication & Proceedings</h3>
+                    <p>End-to-end support for conference proceedings and journal submissions.</p>
+                </div>
+            </a>
+
+            <a href="https://expertedgesolutions.github.io/services/consultancy" class="bento-link item-wide">
+                <div class="bento-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Higher Studies Consultancy</h3>
+                    <p>Finding top-tier universities, scholarship location, and professional application preparation.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="contact-section" id="cta">
         <div class="contact-container">
-            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 10px;">Publication Inquiry</h2>
-            <p style="opacity:0.7;">Let us help you align your work with global publisher standards.</p>
+            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 15px;">Ready to Elevate?</h2>
+            <p style="opacity:0.7; margin-bottom: 20px; font-size: 0.9rem;">Connect with our experts for bespoke publication and design solutions.</p>
             
             <div class="inquiry-box">
                 <div class="inquiry-info">
-                    <h3 style="color: var(--dubai-gold); margin-bottom: 10px;">Direct Contact</h3>
-                    
-                    <div class="contact-details-list">
-                        <div class="detail-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Al Rowaiyah First, Academic City<br>Dubai, UAE</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>exedge.solutions@gmail.com</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>+971 XXXXXXXXXXXX</span>
-                        </div>
+                    <h3 style="color: var(--dubai-gold); margin-bottom: 25px;">Contact Details</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Al Rowaiyah First - Academic City - Dubai, UAE</span>
                     </div>
-
-                    <div class="contact-group">
-                        <a href="mailto:exedge.solutions@gmail.com" class="btn btn-email">
-                            <i class="fas fa-envelope"></i> Email Us
-                        </a>
-                        <a href="https://wa.me/971XXXXXXXXXXXX" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>exedge.solutions@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+971 50 129 1345</span>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="mailto:exedge.solutions@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="https://wa.me/971501291345" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; opacity: 0.4; font-size: 0.75rem;">
-        <p>&copy; 2025 Expert Edge Solutions. Publication Strategy Division.</p>
+    <footer>
+        <p>&copy; 2025 Expert Edge Solutions. All Rights Reserved.</p>
     </footer>
 
     <script>
         window.addEventListener('scroll', () => {
-            const btn = document.getElementById('backToTop');
-            window.scrollY > 300 ? btn.classList.add('visible') : btn.classList.remove('visible');
+            const items = document.querySelectorAll('.bento-item');
+            items.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 50) {
+                    item.style.opacity = "1";
+                    item.style.transform = "translateY(0)";
+                }
+            });
         });
     </script>
 </body>
