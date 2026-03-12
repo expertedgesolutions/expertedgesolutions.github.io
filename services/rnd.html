@@ -37,7 +37,6 @@
         }
         .floating-logo img { height: 50px; filter: drop-shadow(0 0 5px var(--dubai-gold)); }
 
-        /* --- Back to Top --- */
         .back-to-top {
             position: fixed;
             bottom: 30px; right: 30px;
@@ -69,7 +68,6 @@
             line-height: 1.2;
         }
 
-        /* --- Content Sections --- */
         .section-title {
             text-align: center;
             color: var(--dubai-gold);
@@ -81,7 +79,7 @@
 
         .services-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 25px; 
             padding: 20px 8% 60px 8%; 
         }
@@ -93,6 +91,8 @@
             border: 1px solid rgba(255,255,255,0.1); 
             transition: 0.4s; 
             text-align: left;
+            display: flex;
+            flex-direction: column;
         }
         .feature-card:hover { 
             border-color: var(--dubai-gold); 
@@ -101,7 +101,20 @@
         }
         .feature-card i { font-size: 2.2rem; color: var(--dubai-gold); margin-bottom: 20px; }
         .feature-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
-        .feature-card p { opacity: 0.7; font-size: 0.95rem; line-height: 1.6; }
+        .feature-card p { opacity: 0.7; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+        
+        .research-link {
+            margin-top: auto;
+            color: var(--dubai-gold);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            transition: 0.2s;
+        }
+        .research-link i { font-size: 1rem; margin-right: 8px; margin-bottom: 0; }
+        .research-link:hover { text-shadow: 0 0 10px var(--dubai-gold); }
 
         /* --- Flashy Extension Box --- */
         .hosting-highlight {
@@ -112,6 +125,21 @@
             border-left: 5px solid var(--dubai-gold);
         }
 
+        .product-btn {
+            display: inline-flex;
+            align-items: center;
+            background: white;
+            color: var(--deep-navy);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .product-btn:hover { background: var(--dubai-gold); transform: scale(1.05); }
+        .product-btn i { margin-right: 10px; font-size: 1.2rem; }
+
         /* --- Contact Section --- */
         .contact-section { padding: 80px 5%; background: #0a1428; }
         .contact-container {
@@ -120,14 +148,6 @@
             border-radius: 30px; border: 1px solid rgba(197, 160, 89, 0.2);
             text-align: center; backdrop-filter: blur(10px);
         }
-        .inquiry-box { display: flex; flex-direction: column; align-items: center; margin-top: 40px; text-align: center; }
-
-        .contact-details-list { margin: 25px 0; }
-        .detail-item { display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 0.9rem; justify-content: center; }
-        .detail-item i { color: var(--dubai-gold); margin-right: 15px; font-size: 1.1rem; width: 20px; text-align: center; }
-        .detail-item span { opacity: 0.8; line-height: 1.4; text-align: left; }
-
-        .contact-group { display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap; justify-content: center; }
         .btn {
             padding: 14px 28px; border-radius: 50px; text-decoration: none;
             font-weight: 700; font-size: 0.85rem; display: inline-flex;
@@ -135,9 +155,8 @@
         }
         .btn-email { background: var(--dubai-gold); color: var(--deep-navy); }
         .btn-whatsapp { background: #25D366; color: white; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-
-        @media (max-width: 900px) { .inquiry-box { grid-template-columns: 1fr; } }
+        
+        footer { text-align: center; padding: 40px; opacity: 0.4; font-size: 0.75rem; }
     </style>
 </head>
 <body>
@@ -153,77 +172,62 @@
     <section class="hero">
         <p style="color: var(--dubai-gold); letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem;">Innovation & Discovery</p>
         <h1>RESEARCH AND<br>DEVELOPMENT</h1>
-        <p style="max-width: 700px; opacity: 0.7; font-size: 1.1rem; text-align: center; margin-top: 15px;">Fostering the next generation of technological breakthroughs through academic and industrial synergy.</p>
+        <p style="max-width: 700px; opacity: 0.7; font-size: 1.1rem; text-align: center; margin-top: 15px;">Pioneering solutions for next-generation digital trust and AI security.</p>
     </section>
 
-    <p class="section-title">Core R&D Capabilities</p>
+    <p class="section-title">Active Research Topics</p>
 
     <div class="services-grid">
         <div class="feature-card">
-            <i class="fas fa-microscope"></i>
-            <h3>Systematic Investigation</h3>
-            <p>Conducting deep-dive experimental and theoretical research to solve complex technological challenges.</p>
+            <i class="fas fa-user-secret"></i>
+            <h3>Shadow AI</h3>
+            <p>Exploring the security risks and governance challenges posed by unauthorized AI adoption within organizations. Our research focuses on identifying vulnerabilities in unmonitored AI workflows.</p>
+            <a href="https://link.springer.com/article/10.1007/s42979-025-03962-x" target="_blank" class="research-link">
+                <i class="fas fa-file-alt"></i> Read Research Article
+            </a>
         </div>
+
         <div class="feature-card">
-            <i class="fas fa-lightbulb"></i>
-            <h3>Conceptual Innovation</h3>
-            <p>From ideation to proof-of-concept, we transform abstract ideas into viable research prototypes.</p>
+            <i class="fas fa-shield-alt"></i>
+            <h3>Data Privacy in LLMs</h3>
+            <p>Investigating the intersection of Personal Identifiable Information (PII) and Large Language Model training sets to prevent data leakage.</p>
         </div>
+
         <div class="feature-card">
-            <i class="fas fa-vial"></i>
-            <h3>Experimental Validation</h3>
-            <p>Rigorous testing and simulation environments to validate research hypotheses and system performance.</p>
+            <i class="fas fa-network-wired"></i>
+            <h3>Edge Resilience</h3>
+            <p>Developing decentralized frameworks to ensure robust system performance and security across distributed IoT and Edge nodes.</p>
         </div>
     </div>
 
     <section class="hosting-highlight">
-        <h2 style="font-family: 'Playfair Display', serif; color: var(--dubai-gold); margin-bottom: 20px;">The R&D Philosophy</h2>
+        <h2 style="font-family: 'Playfair Display', serif; color: var(--dubai-gold); margin-bottom: 20px;">Featured Product: Privacy Guardian</h2>
         <p style="font-size: 1.1rem; line-height: 1.8;">
-            At Expert Edge Solutions, our R&D wing acts as a bridge between **theoretical curiosity** and **market-ready innovation**. We assist organizations and independent researchers in navigating the "valley of death" between laboratory results and real-world deployment. 
-            <br><br>
-            <span style="color: var(--dubai-gold); font-weight: bold;">Our Focus:</span> We specialize in Distributed Systems, Blockchain Architectures, AI/ML optimization, and Edge Computing resilience—ensuring your R&D efforts yield patentable and publishable results.
+            As a result of our R&D into Shadow AI and Data Privacy, we have developed a **Chrome Extension** designed to protect users in the AI era. This tool automatically detects sensitive and personal information before it is shared with AI models that use prompt data for training.
         </p>
+        <a href="XXX" target="_blank" class="product-btn">
+            <i class="fab fa-github"></i> View Extension on GitHub
+        </a>
     </section>
 
     <section class="contact-section">
         <div class="contact-container">
-            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 10px;">R&D Inquiry</h2>
-            <p style="opacity:0.7;">Partner with us to lead the technological frontier.</p>
+            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 10px;">R&D Partnership</h2>
+            <p style="opacity:0.7; margin-bottom: 30px;">Collaborate with our research team on the frontier of AI Security.</p>
             
-            <div class="inquiry-box">
-                <div class="inquiry-info">
-                    <h3 style="color: var(--dubai-gold); margin-bottom: 10px;">Direct Contact</h3>
-                    
-                    <div class="contact-details-list">
-                        <div class="detail-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Al Rowaiyah First, Academic City, Dubai, UAE</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>exedge.solutions@gmail.com</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>+971 50 129 1345</span>
-                        </div>
-                    </div>
-
-                    <div class="contact-group">
-                        <a href="mailto:exedge.solutions@gmail.com" class="btn btn-email">
-                            <i class="fas fa-envelope"></i> Email Us
-                        </a>
-                        <a href="https://wa.me/971501291345" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                    </div>
-                </div>
+            <div class="contact-group" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:exedge.solutions@gmail.com" class="btn btn-email">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+                <a href="https://wa.me/971501291345" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; opacity: 0.4; font-size: 0.75rem;">
-        <p>&copy; 2026 Expert Edge Solutions. Research & Development Division.</p>
+    <footer>
+        <p>&copy; 2025 Expert Edge Solutions. Research & Development Division.</p>
     </footer>
 
     <script>
