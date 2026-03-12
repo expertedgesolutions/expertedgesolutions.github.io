@@ -116,7 +116,7 @@
         .research-link i { font-size: 1rem; margin-right: 8px; margin-bottom: 0; }
         .research-link:hover { text-shadow: 0 0 10px var(--dubai-gold); }
 
-        /* --- Flashy Extension Box --- */
+        /* --- Featured Product --- */
         .hosting-highlight {
             background: linear-gradient(90deg, rgba(197, 160, 89, 0.1), transparent);
             padding: 60px 8%;
@@ -124,6 +124,8 @@
             margin: 40px 8%;
             border-left: 5px solid var(--dubai-gold);
         }
+
+        .btn-container { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 25px; }
 
         .product-btn {
             display: inline-flex;
@@ -134,13 +136,14 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            margin-top: 20px;
             transition: 0.3s;
         }
-        .product-btn:hover { background: var(--dubai-gold); transform: scale(1.05); }
+        .product-btn.demo-btn { background: #FF0000; color: white; }
+        .product-btn:hover { background: var(--dubai-gold); color: var(--deep-navy); transform: scale(1.05); }
+        .product-btn.demo-btn:hover { background: white; color: #FF0000; }
         .product-btn i { margin-right: 10px; font-size: 1.2rem; }
 
-        /* --- Contact Section --- */
+        /* --- Contact --- */
         .contact-section { padding: 80px 5%; background: #0a1428; }
         .contact-container {
             max-width: 1100px; margin: 0 auto;
@@ -172,7 +175,7 @@
     <section class="hero">
         <p style="color: var(--dubai-gold); letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem;">Innovation & Discovery</p>
         <h1>RESEARCH AND<br>DEVELOPMENT</h1>
-        <p style="max-width: 700px; opacity: 0.7; font-size: 1.1rem; text-align: center; margin-top: 15px;">Pioneering solutions for next-generation digital trust and AI security.</p>
+        <p style="max-width: 700px; opacity: 0.7; font-size: 1.1rem; text-align: center; margin-top: 15px;">Transforming complex data into trustworthy, human-centric solutions.</p>
     </section>
 
     <p class="section-title">Active Research Topics</p>
@@ -181,39 +184,44 @@
         <div class="feature-card">
             <i class="fas fa-user-secret"></i>
             <h3>Shadow AI</h3>
-            <p>Exploring the security risks and governance challenges posed by unauthorized AI adoption within organizations. Our research focuses on identifying vulnerabilities in unmonitored AI workflows.</p>
+            <p>Analyzing the governance risks of unauthorized AI adoption. We focus on securing unmonitored workflows and preventing automated agents from outrunning institutional oversight.</p>
             <a href="https://link.springer.com/article/10.1007/s42979-025-03962-x" target="_blank" class="research-link">
                 <i class="fas fa-file-alt"></i> Read Research Article
             </a>
         </div>
 
         <div class="feature-card">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Data Privacy in LLMs</h3>
-            <p>Investigating the intersection of Personal Identifiable Information (PII) and Large Language Model training sets to prevent data leakage.</p>
+            <i class="fas fa-heartbeat"></i>
+            <h3>XAI for eHealth</h3>
+            <p>Developing an Early Warning System for cardiac arrest using Explainable AI. Our research creates automated counterfactuals to help clinicians understand "why" a high-risk alert was triggered.</p>
         </div>
 
         <div class="feature-card">
-            <i class="fas fa-network-wired"></i>
-            <h3>Edge Resilience</h3>
-            <p>Developing decentralized frameworks to ensure robust system performance and security across distributed IoT and Edge nodes.</p>
+            <i class="fas fa-capsules"></i>
+            <h3>Digital Drugs</h3>
+            <p>Exploring the frontier of software-as-medicine, focusing on digital therapeutics and the algorithmic governance of software-based medical interventions.</p>
         </div>
     </div>
 
     <section class="hosting-highlight">
         <h2 style="font-family: 'Playfair Display', serif; color: var(--dubai-gold); margin-bottom: 20px;">Featured Product: Privacy Guardian</h2>
         <p style="font-size: 1.1rem; line-height: 1.8;">
-            As a result of our R&D into Shadow AI and Data Privacy, we have developed a **Chrome Extension** designed to protect users in the AI era. This tool automatically detects sensitive and personal information before it is shared with AI models that use prompt data for training.
+            A direct outcome of our R&D into <strong>Shadow AI</strong>, we have developed a **Chrome Extension** designed to protect users in the AI era. This tool automatically detects sensitive and personal information before it is shared with AI models that use prompt data for training.
         </p>
-        <a href="XXX" target="_blank" class="product-btn">
-            <i class="fab fa-github"></i> View Extension on GitHub
-        </a>
+        <div class="btn-container">
+            <a href="xyz" target="_blank" class="product-btn">
+                <i class="fab fa-github"></i> View Extension on GitHub
+            </a>
+            <a href="https://www.youtube.com/watch?xyz" target="_blank" class="product-btn demo-btn">
+                <i class="fab fa-youtube"></i> Watch Product Demo
+            </a>
+        </div>
     </section>
 
     <section class="contact-section">
         <div class="contact-container">
-            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 10px;">R&D Partnership</h2>
-            <p style="opacity:0.7; margin-bottom: 30px;">Collaborate with our research team on the frontier of AI Security.</p>
+            <h2 style="font-family:'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 10px;">Collaborate with Us</h2>
+            <p style="opacity:0.7; margin-bottom: 30px;">Partner with our lab to build the next generation of secure, explainable technology.</p>
             
             <div class="contact-group" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                 <a href="mailto:exedge.solutions@gmail.com" class="btn btn-email">
